@@ -17,6 +17,13 @@ public class EditorHistory {
         }
     }
 
+    public void redo() {
+        if (!redoStack.isEmpty()) {
+            undoStack.push(currentState);
+            currentState = redoStack.pop();
+        }
+    }
+
     public String getCurrentState() {
         return currentState;
     }

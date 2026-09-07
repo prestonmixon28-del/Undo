@@ -9,5 +9,7 @@ public class Main {
        System.out.println(editor.getCurrentState());
        editor.undo();
        System.out.println(editor.getCurrentState());
+       editor.redo();
+       System.out.println(editor.getCurrentState());
    }
 }
