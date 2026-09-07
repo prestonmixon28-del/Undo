@@ -1,14 +1,13 @@
 public class Main {
    public static void main(String[] args) {
-       Stack<String> stack = new Stack<>();
 
-       stack.push("first");
-       stack.push("second");
-       stack.push("third");
+       EditorHistory editor = new EditorHistory();
 
-       System.out.println(stack.pop());
-       System.out.println(stack.pop());
-       System.out.println(stack.peek());
-       System.out.println(stack.isEmpty());
+       editor.makeChange("hello");
+       editor.makeChange("hello world");
+
+       System.out.println(editor.getCurrentState());
+       editor.undo();
+       System.out.println(editor.getCurrentState());
    }
 }
